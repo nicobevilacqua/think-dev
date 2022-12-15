@@ -10,7 +10,7 @@ import * as THREE from 'three'
 
 export default class UI {
   constructor(terrain: Terrain, control: Control) {
-    this.fps = new FPS()
+    this.fps = new FPS(terrain)
     this.bag = new Bag()
     this.joystick = new Joystick(control)
 

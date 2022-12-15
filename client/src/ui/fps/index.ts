@@ -1,8 +1,13 @@
 /**
- * Display current FPS
+ * Display current FPS & position
  */
+
+import Terrain from '../../terrain'
+
 export default class FPS {
-  constructor() {
+  terrain: Terrain;
+  constructor(terrain: Terrain) {
+    this.terrain = terrain;
     this.fps.className = 'fps'
     this.fps.innerHTML = `FPS: 60`
 
@@ -20,7 +25,11 @@ export default class FPS {
     this.count++
 
     if (performance.now() - this.gap > 1000) {
-      this.fps.innerHTML = `FPS: ${this.count}`
+      this.fps.innerHTML = `FPS: ${this.count}<br />
+      X: ${Math.round(this.terrain.camera.position.x)},
+      Y: ${Math.round(this.terrain.camera.position.y)},
+      Z: ${Math.round(this.terrain.camera.position.z)},
+      `
       this.gap = performance.now()
       this.count = 0
     }
