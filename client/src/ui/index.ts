@@ -62,8 +62,8 @@ export default class UI {
         this.onSave()
       } else {
         // load game
-        terrain.noise.seed =
-          Number(window.localStorage.getItem('seed')) ?? Math.random()
+        terrain.noise.seed = 42;
+          // Number(window.localStorage.getItem('seed')) ?? Math.random()
 
         const customBlocks =
           (JSON.parse(
