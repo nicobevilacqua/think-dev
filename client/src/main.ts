@@ -5,7 +5,7 @@ import Terrain from "./terrain";
 import UI from "./ui";
 import Audio from "./audio";
 
-import * as connection from "./connection";
+// import * as connection from "./connection/gun";
 
 import "./style.css";
 
@@ -22,7 +22,7 @@ const control = new Control(scene, camera, player, terrain, audio);
 
 const ui = new UI(terrain, control);
 
-connection.init();
+// connection.init();
 
 // animation
 (function animate() {
