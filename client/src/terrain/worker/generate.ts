@@ -142,7 +142,7 @@ onmessage = (
           );
         }
       }
-
+/*
       // tree
       const treeOffset =
         noise.get(x / noise.treeGap, z / noise.treeGap, noise.treeSeed) *
@@ -198,9 +198,22 @@ onmessage = (
             }
           }
         }
+      }*/
+    }
+  }
+  //console.log(customBlocks);
+  //const customBlocks2 = [];
+  /*
+  for (let x = 0; x<100; x++) {
+    for (let y = 0; y<100; y++) {
+      for (let z = 3; z<13; z++) {
+        if(idMap.get(`${x}_${y}_${z}`)) {
+          customBlocks2.push({ placed: false, type: 0,x,y,z });
+        }
       }
     }
   }
+  */
 
   for (const block of customBlocks) {
     if (
