@@ -14,7 +14,7 @@
 - Cartesi
 
 **Objetivos:**
-- Motor grafico en [https://threejs.org/](threejs), corre sobre el browser sin validaciones.
+- Motor grafico en [threejs](https://threejs.org/), corre sobre el browser sin validaciones.
 - Mundo infito deterministico, para esto simplemente harcodeamos la semilla (seed) del algoritmo de generacion del escenario.
 - Cada usuario puede realizar modificaciones solo en su rectangulo o parcela, cada rectangulo o parcela es un nft de 30 cubos por 30 cubos y 60
  cubos de altura
