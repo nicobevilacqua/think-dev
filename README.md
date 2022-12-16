@@ -7,13 +7,13 @@
 
 ## Prueba de concepto de un minecraft decentralizado
 
-Tecnologias:
+**Tecnologias:**
 - Threejs
 - Socket.io
 - EVM solidity
 - Cartesi
 
-Objetivos:
+**Objetivos:**
 - Motor grafico en [https://threejs.org/](threejs), corre sobre el browser sin validaciones.
 - Mundo infito deterministico, para esto simplemente harcodeamos la semilla (seed) del algoritmo de generacion del escenario.
 - Cada usuario puede realizar modificaciones solo en su rectangulo o parcela, cada rectangulo o parcela es un nft de 30 cubos por 30 cubos y 60
@@ -35,3 +35,9 @@ Dado el tiempo limitado minificamos el alcance para poder lograr una prueba de c
 En este poc se podra conectarse usando metamask, interactuar con el mundo, crear bloques y ver bloques de otros jugadores
 
 [http://34.67.45.107](http://34.67.45.107)
+
+[x] Motor grafico, corre sobre el browser sin validaciones.
+[x] Mundo infito deterministico
+[x] Cada usuario puede realizar modificaciones (para la demo se cualquiera puede hacer cualquier cosa)
+[x] Multiplayer, varios usuarios pueden editar el mismo mundo, pero no esta la persistencia en **Cartesi** usando sqlite
+
