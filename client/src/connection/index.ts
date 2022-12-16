@@ -10,7 +10,16 @@ export default class Connection {
   }
 
   init() {
-    const socket = io(import.meta.env.DEV ? 'http://localhost:5000' : '');
+    const socket = io(import.meta.env.DEV ? 'http://localhost:5000' : 'http://34.67.45.107/');
+    // @dev en prod va;
+    /*
+    const socket = io('http://34.67.45.107/', {
+      path: '/socket.io',
+      autoConnect: false,
+      //transports: ['websocket'],
+    });
+    */
+
     socket.auth = { sessionID: localStorage.getItem('currentAccount') };
     socket.connect();
 
@@ -38,7 +47,12 @@ export default class Connection {
     });
 
     socket.on("removeBlock", (user, block, ...args) => {
-      console.log(user);
+      this.terrain.customBlocks.push(block);
+      // this.terrain.blocks[newBlock.holdingBlock].instanceMatrix.needsUpdate = true;
+      // this.terrain.buildBlock(, newBlock.type);
+      console.log("SOCKET ADD BLOCK", user, block);
+      this.terrain.initBlocks()
+      this.terrain.generate()
     });
     this.socket = socket;
   }
