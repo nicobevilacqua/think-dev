@@ -1,14 +1,23 @@
-import * as gun from "./gun";
-import * as socket from "./socket";
+import io from "socket.io-client";
 
-export function onBlockAdded(block: any) {
-  const event = "BLOCK_ADDED";
-  gun.emit(event, block);
-  socket.emit(event, block);
-}
+export default class Connection {
+  socket: any;
 
-export function onBlockRemoved(block: any) {
-  const event = "BLOCK_REMOVED";
-  gun.emit(event, block);
-  socket.emit(event, block);
+  constructor() {
+    const socket = io('http://localhost:5000');
+    socket.on("addBlock", (user, block,...args) => {
+      console.log(user);
+    });
+
+    socket.on("removeBlock", (user, block, ...args) => {
+      console.log(user);
+    });
+    this.socket = socket;
+
+  }
+
+  emit(event: any, properties: any) {
+    this.socket.emit(event, properties);
+  }
+
 }

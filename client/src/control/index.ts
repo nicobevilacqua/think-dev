@@ -6,6 +6,7 @@ import Terrain, { BlockType } from "../terrain";
 import Block from "../terrain/mesh/block";
 import Noise from "../terrain/noise";
 import Audio from "../audio";
+import Connection from "../connection";
 import { isMobile } from "../utils";
 enum Side {
   front,
@@ -22,7 +23,8 @@ export default class Control {
     camera: THREE.PerspectiveCamera,
     player: Player,
     terrain: Terrain,
-    audio: Audio
+    audio: Audio,
+    connection: Connection
   ) {
     this.scene = scene;
     this.camera = camera;
@@ -30,6 +32,8 @@ export default class Control {
     this.terrain = terrain;
     this.control = new PointerLockControls(camera, document.body);
     this.audio = audio;
+
+    this.connection = connection;
 
     this.raycaster = new THREE.Raycaster();
     this.raycaster.far = 8;
@@ -46,6 +50,8 @@ export default class Control {
   terrain: Terrain;
   control: PointerLockControls;
   audio: Audio;
+  connection: Connection;
+
   velocity = new THREE.Vector3(0, 0, 0);
 
   // collide and jump properties
@@ -248,6 +254,7 @@ export default class Control {
             }
 
             console.log("block removed", block);
+            this.connection.emit("blockRemoved", block);
 
             // remove the block
             block.object.setMatrixAt(
@@ -383,7 +390,7 @@ export default class Control {
             );
 
             console.log("new block added", newBlock);
-
+            this.connection.emit("addRemoved", block);
             // add to custom blocks
             this.terrain.customBlocks.push(newBlock);
           }
