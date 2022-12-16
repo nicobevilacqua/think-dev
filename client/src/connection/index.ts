@@ -10,7 +10,7 @@ export default class Connection {
   }
 
   init() {
-    const socket = io('http://localhost:5000');
+    const socket = io(import.meta.env.DEV ? 'http://localhost:5000' : '');
     socket.auth = { sessionID: localStorage.getItem('currentAccount') };
     socket.connect();
 
