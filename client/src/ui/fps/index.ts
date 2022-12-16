@@ -29,7 +29,9 @@ export default class FPS {
       X: ${Math.round(this.terrain.camera.position.x)},
       Y: ${Math.round(this.terrain.camera.position.y)},
       Z: ${Math.round(this.terrain.camera.position.z)},
+      totalUsers: ${window.totalUsers || 0}
       `
+      // totalUsers meto variable global para simplificar demo
       this.gap = performance.now()
       this.count = 0
     }

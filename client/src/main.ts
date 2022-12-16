@@ -21,9 +21,8 @@ const connection = new Connection();
 const terrain = new Terrain(scene, camera);
 const control = new Control(scene, camera, player, terrain, audio, connection);
 
-const ui = new UI(terrain, control);
+const ui = new UI(terrain, control, connection);
 
-// connection.init();
 
 // animation
 (function animate() {

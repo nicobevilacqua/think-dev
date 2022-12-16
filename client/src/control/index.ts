@@ -240,6 +240,7 @@ export default class Control {
       case 0:
         {
           if (block && block.object instanceof THREE.InstancedMesh) {
+            this.connection.emit("removeBlock", block);
             // calculate position
             block.object.getMatrixAt(block.instanceId!, matrix);
             const position = new THREE.Vector3().setFromMatrixPosition(matrix);
@@ -390,7 +391,8 @@ export default class Control {
             );
 
             console.log("new block added", newBlock);
-            this.connection.emit("addRemoved", block);
+            this.connection.emit("addBlock", newBlock);
+            console.log("block added", newBlock)
             // add to custom blocks
             this.terrain.customBlocks.push(newBlock);
           }

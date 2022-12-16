@@ -1,6 +1,7 @@
 import FPS from './fps'
 import Bag from './bag'
 import Terrain from '../terrain'
+import Connection from '../connection'
 import Block from '../terrain/mesh/block'
 import Control from '../control'
 import { Mode } from '../player'
@@ -9,7 +10,7 @@ import { isMobile } from '../utils'
 import * as THREE from 'three'
 
 export default class UI {
-  constructor(terrain: Terrain, control: Control) {
+  constructor(terrain: Terrain, control: Control, connection: Connection) {
     this.fps = new FPS(terrain)
     this.bag = new Bag()
     this.joystick = new Joystick(control)
@@ -25,8 +26,11 @@ export default class UI {
          .then((accounts) => {
             const account = accounts[0]
             localStorage.setItem('currentAccount', account)
-            // @todo should sign message to verify account
+            
+            // @TODO should sign message to verify account and send signature to socket it
+            
             console.log(account);
+            connection.init();
             this.play?.classList.remove('hidden');
             this.connect?.classList.add('hidden');
         }).catch((error) => {
