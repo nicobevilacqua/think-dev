@@ -76,7 +76,7 @@ export default class UI {
           'block',
           JSON.stringify(terrain.customBlocks)
         )
-        window.localStorage.setItem('seed', JSON.stringify(terrain.noise.seed))
+        window.localStorage.setItem('seed', 42)
 
         window.localStorage.setItem(
           'position',
@@ -246,7 +246,6 @@ export default class UI {
   loadModal = document.querySelector('.load-modal')
   settings = document.querySelector('.settings')
   features = document.querySelector('.features')
-  github = document.querySelector('.github')
 
   // settings
   distance = document.querySelector('#distance')

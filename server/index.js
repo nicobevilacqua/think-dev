@@ -38,6 +38,8 @@ io.use((socket, next) => {
 
 let users = [];
 
+let blocks = {};
+
 io.on("connection", (socket) => {
   console.log("a user connected", {
     sessionID: socket.sessionID,
@@ -49,13 +51,21 @@ io.on("connection", (socket) => {
     io.emit('totalUsers', users.length);
   }
 
+  socket.emit("customBlocks", Object.values(blocks));
+
   socket.emit("session", {
     sessionID: socket.handshake.auth.sessionID,
   });
 
-  socket.on("addBlock", (...args) => {
-    console.log("addBlock", args);
-    socket.broadcast.emit("addBlock", socket.handshake.auth.sessionID, ...args);
+  socket.on("addBlock", (block) => {
+    console.log("addBlock");
+    socket.broadcast.emit("addBlock", socket.handshake.auth.sessionID, block);
+    blocks[`${block.x}_${block.y}_${block.z}`] = block;
+  });
+  socket.on("removeBlock", (block) => {
+    console.log("removeBlock");
+    socket.broadcast.emit("removeBlock", socket.handshake.auth.sessionID, block);
+    blocks[`${block.x}_${block.y}_${block.z}`] = block;
   });
 
   socket.on("pong", () => {

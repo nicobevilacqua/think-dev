@@ -13,10 +13,20 @@ export default class Connection {
     const socket = io('http://localhost:5000');
     socket.auth = { sessionID: localStorage.getItem('currentAccount') };
     socket.connect();
+
+    socket.on("customBlocks", (allBlocks) => {
+        this.terrain.customBlocks = allBlocks
+        this.terrain.initBlocks()
+        this.terrain.generate()
+    })
     
     socket.on("addBlock", (user, newBlock) => {
       this.terrain.customBlocks.push(newBlock);
+      // this.terrain.blocks[newBlock.holdingBlock].instanceMatrix.needsUpdate = true;
+      // this.terrain.buildBlock(, newBlock.type);
       console.log("SOCKET ADD BLOCK", user, newBlock);
+      this.terrain.initBlocks()
+      this.terrain.generate()
     });
 
     socket.on("session", (...args) => {
