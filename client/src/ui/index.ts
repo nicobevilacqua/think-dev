@@ -266,7 +266,6 @@ export default class UI {
     this.menu?.classList.remove('start')
     this.play && (this.play.innerHTML = 'Resume')
     this.crossHair.classList.remove('hidden')
-    this.github && this.github.classList.add('hidden')
     this.feature?.classList.add('hidden')
   }
 
@@ -274,7 +273,6 @@ export default class UI {
     this.menu?.classList.remove('hidden')
     this.crossHair.classList.add('hidden')
     this.save && (this.save.innerHTML = 'Save and Exit')
-    this.github && this.github.classList.remove('hidden')
   }
 
   onExit = () => {
