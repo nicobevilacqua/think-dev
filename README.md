@@ -1,4 +1,4 @@
-# Think && Dev Hackathon
+# Think & Dev Hackathon
 
 ## Prueba de concepto de un minecraft decentralizado
 
