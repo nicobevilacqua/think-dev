@@ -15,6 +15,11 @@ Objetivos:
 
 Dado el tiempo limitado minificamos el alcance para poder lograr una prueba de concepto, tomamos una demo sencilla single player y empezamos a iterar sobre ella, preparamos las lands y el servicio de socket io.
 
+- Contrato de lands [nft-lands](https://github.com/nicobevilacqua/think-dev/tree/master/nft-lands)
+- Server [socket.io](https://github.com/nicobevilacqua/think-dev/blob/master/server/index.js)
+- Client [motor threejs](https://github.com/nicobevilacqua/think-dev/tree/master/client/src)
+- Implementacion de [sqlite para persistencia de bloques con cartesi](https://github.com/nicobevilacqua/think-dev/tree/master/sqlite)
+
 ## Demo time
 En este poc se podra conectarse usando metamask, interactuar con el mundo, crear bloques y ver bloques de otros jugadores
 
