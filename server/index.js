@@ -61,11 +61,14 @@ io.on("connection", (socket) => {
     console.log("addBlock");
     socket.broadcast.emit("addBlock", socket.handshake.auth.sessionID, block);
     blocks[`${block.x}_${block.y}_${block.z}`] = block;
+   // yarn start input send --payload "INSERT INTO Blocks VALUES (block)"
   });
   socket.on("removeBlock", (block) => {
     console.log("removeBlock");
     socket.broadcast.emit("removeBlock", socket.handshake.auth.sessionID, block);
     blocks[`${block.x}_${block.y}_${block.z}`] = block;
+   // yarn start input send --payload "INSERT INTO Blocks VALUES (block)"
+
   });
 
   socket.on("pong", () => {
