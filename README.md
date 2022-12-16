@@ -3,12 +3,12 @@
 ## Prueba de concepto de un minecraft decentralizado
 
 Objetivos:
-- Motor grafico en threejs, corre sobre el browser sin validaciones
-- Mundo infito deterministo, para estp simplemente harcodeamos la semilla del algoritmo de generacion
-- Cada usuario puede realizar modificaciones solo en su rectangulo, cada rectangulo es un nft de 30 cubos por 30 cubos y 60
+- Motor grafico en [https://threejs.org/](threejs), corre sobre el browser sin validaciones.
+- Mundo infito deterministico, para esto simplemente harcodeamos la semilla (seed) del algoritmo de generacion del escenario.
+- Cada usuario puede realizar modificaciones solo en su rectangulo o parcela, cada rectangulo o parcela es un nft de 30 cubos por 30 cubos y 60
  cubos de altura
-- Un servicio de socketio sirve para dar una sensacion de realtime
-- La coneccion al socket io es a travez de una firma
+- Usamos [https://socket.io/](socketio) para dar la sensacion de realtime (comunicacion peer to peer entre usuarios)
+- La conexion al socket io es a travez de una firma desde la wallet de cada usuario
 - La persitencia de los bloques se hace a travez de un sqlite implementado en cartesi
 
 ## Trabajo realizado
