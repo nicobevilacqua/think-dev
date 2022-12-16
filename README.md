@@ -7,6 +7,12 @@
 
 ## Prueba de concepto de un minecraft decentralizado
 
+Tecnologias:
+- Threejs
+- Socket.io
+- EVM solidity
+- Cartesi
+
 Objetivos:
 - Motor grafico en [https://threejs.org/](threejs), corre sobre el browser sin validaciones.
 - Mundo infito deterministico, para esto simplemente harcodeamos la semilla (seed) del algoritmo de generacion del escenario.
