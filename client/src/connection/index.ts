@@ -5,6 +5,7 @@ export default class Connection {
 
   constructor() {
     const socket = io('http://localhost:5000');
+    socket.auth = { walletID: localStorage.getItem('currentAccount') };
     socket.on("addBlock", (user, block,...args) => {
       console.log(user);
     });
