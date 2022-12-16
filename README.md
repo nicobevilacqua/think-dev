@@ -41,8 +41,8 @@ En este poc se podra conectarse usando metamask, interactuar con el mundo, crear
 
 [http://34.67.45.107](http://34.67.45.107)
 
-[x] Motor grafico, corre sobre el browser sin validaciones.
-[x] Mundo infito deterministico
-[x] Cada usuario puede realizar modificaciones (para la demo se cualquiera puede hacer cualquier cosa)
-[x] Multiplayer, varios usuarios pueden editar el mismo mundo, pero no esta la persistencia en **Cartesi** usando sqlite
+- [x] Motor grafico, corre sobre el browser sin validaciones.
+- [x] Mundo infito deterministico
+- [x] Cada usuario puede realizar modificaciones (para la demo se cualquiera puede hacer cualquier cosa)
+- [x] Multiplayer, varios usuarios pueden editar el mismo mundo, pero no esta la persistencia en **Cartesi** usando sqlite
 
