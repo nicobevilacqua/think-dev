@@ -24,7 +24,7 @@ export default class UI {
          .request({ method: "eth_requestAccounts" })
          .then((accounts) => {
             const account = accounts[0]
-            document.localStorage.setItem('currentAccount', account)
+            localStorage.setItem('currentAccount', account)
             // @todo should sign message to verify account
             console.log(account);
             this.play?.classList.remove('hidden');
