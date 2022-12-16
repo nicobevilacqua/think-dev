@@ -5,7 +5,7 @@ import Terrain from "./terrain";
 import UI from "./ui";
 import Audio from "./audio";
 
-// import * as connection from "./connection/gun";
+import Connection from "./connection/index";
 
 import "./style.css";
 
@@ -17,8 +17,9 @@ const renderer = core.renderer;
 const player = new Player();
 const audio = new Audio(camera);
 
+const connection = new Connection();
 const terrain = new Terrain(scene, camera);
-const control = new Control(scene, camera, player, terrain, audio);
+const control = new Control(scene, camera, player, terrain, audio, connection);
 
 const ui = new UI(terrain, control);
 
