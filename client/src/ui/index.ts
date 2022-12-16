@@ -18,6 +18,11 @@ export default class UI {
     this.crossHair.innerHTML = '+'
     document.body.appendChild(this.crossHair)
 
+    this.connect?.addEventListener('click', () => {
+      this.play?.classList.remove('hidden');
+      this.connect?.classList.add('hidden');
+    })
+
     // play
     this.play?.addEventListener('click', () => {
       if (this.play?.innerHTML === 'Play') {
@@ -202,6 +207,7 @@ export default class UI {
   crossHair = document.createElement('div')
 
   // buttons
+  connect = document.querySelector('#connect')
   play = document.querySelector('#play')
   control = document.querySelector('#control')
   setting = document.querySelector('#setting')
