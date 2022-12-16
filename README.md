@@ -18,7 +18,7 @@
 - Mundo infito deterministico, para esto simplemente harcodeamos la semilla (seed) del algoritmo de generacion del escenario.
 - Cada usuario puede realizar modificaciones solo en su rectangulo o parcela, cada rectangulo o parcela es un nft de 30 cubos por 30 cubos y 60
  cubos de altura
-- Usamos [https://socket.io/](socketio) para dar la sensacion de realtime (comunicacion peer to peer entre usuarios)
+- Usamos [socketio](https://socket.io/) para dar la sensacion de realtime (comunicacion peer to peer entre usuarios)
 - La conexion al socket io es a travez de una firma desde la wallet de cada usuario
 - La persitencia de los bloques se hace a travez de un sqlite implementado en cartesi
 
