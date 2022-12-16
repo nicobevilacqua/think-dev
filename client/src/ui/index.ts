@@ -19,8 +19,29 @@ export default class UI {
     document.body.appendChild(this.crossHair)
 
     this.connect?.addEventListener('click', () => {
-      this.play?.classList.remove('hidden');
-      this.connect?.classList.add('hidden');
+      if (typeof window.ethereum !== "undefined") {
+        ethereum
+         .request({ method: "eth_requestAccounts" })
+         .then((accounts) => {
+            const account = accounts[0]
+            document.localStorage.setItem('currentAccount', account)
+            // @todo should sign message to verify account
+            console.log(account);
+            this.play?.classList.remove('hidden');
+            this.connect?.classList.add('hidden');
+        }).catch((error) => {
+           // Handle error
+           console.log(error, error.code);
+
+           // 4001 - The request was rejected by the user
+           // -32602 - The parameters were invalid
+           // -32603- Internal error
+       });
+   } else {
+       window.open("https://metamask.io/download/", "_blank");
+   }
+
+      
     })
 
     // play
