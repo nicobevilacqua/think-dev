@@ -19,6 +19,7 @@
     "express": "4",
     "gun": "^0.2020.1238",
     "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
     "three": "^0.137.0"
   }
 }
