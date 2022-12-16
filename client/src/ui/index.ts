@@ -23,12 +23,12 @@ export default class UI {
       if (this.play?.innerHTML === 'Play') {
         this.onPlay()
 
-        // reset game
-        terrain.noise.seed = Math.random()
-        terrain.noise.stoneSeed = Math.random()
-        terrain.noise.treeSeed = Math.random()
-        terrain.noise.coalSeed = Math.random()
-        terrain.noise.leafSeed = Math.random()
+        // reset game no randoms
+        terrain.noise.seed = 42 // Math.random()
+        terrain.noise.stoneSeed = 42 // Math.random()
+        terrain.noise.treeSeed = 42 // Math.random()
+        terrain.noise.coalSeed = 42 // Math.random()
+        terrain.noise.leafSeed = 42 // Math.random()
         terrain.customBlocks = []
         terrain.initBlocks()
         terrain.generate()
