@@ -17,8 +17,8 @@ const renderer = core.renderer;
 const player = new Player();
 const audio = new Audio(camera);
 
-const connection = new Connection();
 const terrain = new Terrain(scene, camera);
+const connection = new Connection(terrain);
 const control = new Control(scene, camera, player, terrain, audio, connection);
 
 const ui = new UI(terrain, control, connection);
