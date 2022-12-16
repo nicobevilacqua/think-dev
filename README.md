@@ -31,6 +31,11 @@ Dado el tiempo limitado minificamos el alcance para poder lograr una prueba de c
 - Client [motor threejs](https://github.com/nicobevilacqua/think-dev/tree/master/client/src)
 - Implementacion de [sqlite para persistencia de bloques con cartesi](https://github.com/nicobevilacqua/think-dev/tree/master/sqlite)
 
+## Lands
+
+Cada land tiene el eje x,y,z donde comienza, como siempre tienen las mismas dimensiones con una sola coordenada se puede almacenar, el id principal con el que se inserta en el sqlite de Cartesi es el hash `keccak256(x,y,z)`
+El socket io que hace de facilitador para mantener la impresion de realtime es el que se encargar de mandar en baches las modificaciones de los diferentes usuarios a Cartesi.
+
 ## Demo time
 En este poc se podra conectarse usando metamask, interactuar con el mundo, crear bloques y ver bloques de otros jugadores
 
