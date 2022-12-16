@@ -15,7 +15,7 @@ Objetivos:
 
 Dado el tiempo limitado minificamos el alcance para poder lograr una prueba de concepto, tomamos una demo sencilla single player y empezamos a iterar sobre ella, preparamos las lands y el servicio de socket io.
 
-- Contrato de lands [nft-lands](https://github.com/nicobevilacqua/think-dev/tree/master/nft-lands)
+- Contrato de lands [nft-lands](https://github.com/nicobevilacqua/think-dev/tree/master/nft-lands) [`0xab33f99f641d7085549e3816c3e2ba0299c1948a`](https://goerli.etherscan.io/address/0xab33f99f641d7085549e3816c3e2ba0299c1948a#code)
 - Server [socket.io](https://github.com/nicobevilacqua/think-dev/blob/master/server/index.js)
 - Client [motor threejs](https://github.com/nicobevilacqua/think-dev/tree/master/client/src)
 - Implementacion de [sqlite para persistencia de bloques con cartesi](https://github.com/nicobevilacqua/think-dev/tree/master/sqlite)
